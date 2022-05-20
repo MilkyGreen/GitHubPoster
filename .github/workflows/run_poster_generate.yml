@@ -9,10 +9,10 @@ env:
   # please change to your own config.
   # this actions generate only this year
   # If you fork this please change the type to yours below
-  TYPE: "ns, issue, strava, github, forest, pass" # support strava/gpx/ns/cichang/shanbay/duolingo/issue/leetcode/twitter/github/gitlab/kindle/bilibili/wakatime/dota2/forest, Please change the 'pass' it to your own separated by commas
-  ME: Yihong0618
-  GITHUB_NAME: yihong0618
-  GITHUB_EMAIL: zouzou0208@gmail.com
+  TYPE: "github, leetcode, duolingo" # support strava/gpx/ns/cichang/shanbay/duolingo/issue/leetcode/twitter/github/gitlab/kindle/bilibili/wakatime/dota2/forest, Please change the 'pass' it to your own separated by commas
+  ME: MilkyGreen
+  GITHUB_NAME: MilkyGreen
+  GITHUB_EMAIL: 781443857@qq.com
 
 jobs:
   sync:
@@ -61,7 +61,7 @@ jobs:
       - name: Run sync duolingo script
         if: contains(env.TYPE, 'duolingo')
         run: |
-          python -m github_poster duolingo --duolingo_user_name ${{ secrets.DUOLINGO_USER_NAME }} --duolingo_password ${{ secrets.DUOLINGO_PASSWORD }} --me ${{ env.ME }}
+          python -m github_poster duolingo --duolingo_user_name ${{ secrets.DUOLINGO_USERNAME }} --duolingo_password ${{ secrets.DUOLINGO_PASSWORD }} --me ${{ env.ME }}
 
       - name: Run sync cichang script
         if: contains(env.TYPE, 'cichang')
@@ -91,7 +91,7 @@ jobs:
       - name: Run sync github script
         if: contains(env.TYPE, 'github')
         run: |
-          python -m github_poster github --github_user_name ${{ secrets.G_USER_NAME }} --me ${{ env.ME }} --with-animation --with-skyline --stand-with-ukraine
+          python -m github_poster github --github_user_name MilkyGreen --me ${{ env.ME }} --with-animation --with-skyline --stand-with-ukraine
 
       - name: Run sync gitlab script
         if: contains(env.TYPE, 'gitlab')
