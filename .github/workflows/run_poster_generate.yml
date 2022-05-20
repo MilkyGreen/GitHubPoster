@@ -46,17 +46,17 @@ jobs:
       - name: Run sync duolingo script
         if: contains(env.TYPE, 'duolingo')
         run: |
-          python -m github_poster duolingo --duolingo_user_name ${{ secrets.DUOLINGO_USERNAME }} --duolingo_password ${{ secrets.DUOLINGO_PASSWORD }} --me ""
+          python -m github_poster duolingo --duolingo_user_name ${{ secrets.DUOLINGO_USERNAME }} --duolingo_password ${{ secrets.DUOLINGO_PASSWORD }} --me MilkyGreen
 
       - name: Run sync leetcode script
         if: contains(env.TYPE, 'leetcode')
         run: |
-          python -m github_poster leetcode --leetcode_cookie  '${{ secrets.LEETCODE_COOKIE }}' --me " " --cn
+          python -m github_poster leetcode --leetcode_cookie  '${{ secrets.LEETCODE_COOKIE }}' --me MilkyGreen --cn
           
       - name: Run sync github script
         if: contains(env.TYPE, 'github')
         run: |
-          python -m github_poster github --github_user_name MilkyGreen --me " " --stand-with-ukraine
+          python -m github_poster github --github_user_name MilkyGreen --me MilkyGreen --stand-with-ukraine
 
       - name: Mv svg files to examples
         # only for me to show
