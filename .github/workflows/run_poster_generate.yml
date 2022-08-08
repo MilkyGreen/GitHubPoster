@@ -9,7 +9,7 @@ env:
   # please change to your own config.
   # this actions generate only this year
   # If you fork this please change the type to yours below
-  TYPE: "github, leetcode, duolingo" # support strava/gpx/ns/cichang/shanbay/duolingo/issue/leetcode/twitter/github/gitlab/kindle/bilibili/wakatime/dota2/forest, Please change the 'pass' it to your own separated by commas
+  TYPE: "github, leetcode, duolingo, shanbay" # support strava/gpx/ns/cichang/shanbay/duolingo/issue/leetcode/twitter/github/gitlab/kindle/bilibili/wakatime/dota2/forest, Please change the 'pass' it to your own separated by commas
   ME: MilkyGreen
   GITHUB_NAME: MilkyGreen
   GITHUB_EMAIL: 781443857@qq.com
@@ -57,6 +57,12 @@ jobs:
         if: contains(env.TYPE, 'github')
         run: |
           python -m github_poster github --github_user_name MilkyGreen --me " " --stand-with-ukraine --year 2022
+      
+      - name: Run sync shanbay script
+        if: contains(env.TYPE, 'shanbay')
+        run: |
+          github_poster shanbay --shanbay_user_name 'eqvoyr' --me "" --year 2022 --special-color1 '#33C6A4' --special-color2 '#33C6A4'
+
 
       - name: Mv svg files to examples
         # only for me to show
