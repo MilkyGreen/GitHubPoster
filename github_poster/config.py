@@ -28,7 +28,7 @@ MONTH_NAMES = [
 ]
 
 TYPE_INFO_DICT = {
-    "duolingo": "Duolingo",
+    "duolingo": "多邻国 Duolingo",
     "github": "GitHub",
     "leetcode": "LeetCode",
     "twitter": "Twitter",
@@ -40,7 +40,7 @@ TYPE_INFO_DICT = {
     "ns": "NS",
     "kindle": "Kindle",
     "garmin": "Garmin",
-    "shanbay": "Shanbay",
+    "shanbay": "扇贝单词 Shanbay",
     "forest": "Forest",
     "jike": "Jike",
     "bbdc": "BBDC",
